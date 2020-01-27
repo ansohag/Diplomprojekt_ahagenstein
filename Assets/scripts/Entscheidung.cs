@@ -26,6 +26,7 @@ public class Entscheidung : MonoBehaviour
     public void Start()
     {
         vid.prepareCompleted += StartVideo;
+        vid.prepareCompleted += StartEntsch1Video;
         time = maxTime;
         timeEntscheidung = maxTimeEntscheidung;
     }
@@ -47,11 +48,11 @@ public class Entscheidung : MonoBehaviour
         startButton.SetActive(false);
     }
 
-    public void StartEntschVideo(VideoPlayer vp)
+    public void StartEntsch1Video(VideoPlayer vp)
     {
         Debug.Log("Entsch1 is played");
         vp.Play();
-        videoAntworten.SetActive(false);
+        //videoAntworten.SetActive(false);
     }
 
     public void Update()
