@@ -273,13 +273,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 512760228}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.70710677, z: 0.70710677, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -270, y: 90, z: -90}
 --- !u!328 &512760233
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ VideoPlayer:
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 2
+  m_RenderMode: 3
   m_AspectRatio: 2
   m_DataSource: 1
   m_PlaybackSpeed: 1
@@ -325,14 +325,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vid: {fileID: 512760233}
+  entschVid: {fileID: 512760233}
   url: file:///Users/Anna/Documents/Diplomprojekt/programming/sampleVideos/video5.mp4
+  entschUrl: file:///Users/Anna/Documents/Diplomprojekt/programming/sampleVideos/video4.mp4
   startButton: {fileID: 958258777}
   Entscheidung1: {fileID: 1366499301}
+  chooseRandom: {fileID: 2034712176}
   timeWaited: 0
   time: 0
   maxTime: 5
   timeEntscheidung: 0
   maxTimeEntscheidung: 10
+  videoAntworten: {fileID: 2034712176}
+  videoNichtAntworten: {fileID: 1804321555}
 --- !u!1 &675130042
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,23 +7,27 @@ public class Entscheidung : MonoBehaviour
 {
 
     public VideoPlayer vid;
-    public VideoPlayer entschVid;
+    public VideoPlayer entsch1Vid;
     public string url;
-    public string entschUrl;
+    public string entsch1Url;
 
     public GameObject startButton;
     public GameObject Entscheidung1;
-    //public GameObject chooseRandom;
+    public GameObject chooseRandom;
     public float timeWaited;
     public float time;
     public float maxTime = 5f;
     public float timeEntscheidung;
     public float maxTimeEntscheidung = 10f;
 
+    public GameObject videoAntworten;
+    public GameObject videoNichtAntworten;
+
     public void Start()
     {
         vid.prepareCompleted += StartVideo;
         time = maxTime;
+        timeEntscheidung = maxTimeEntscheidung;
     }
 
     public void SetUrl()
@@ -31,12 +35,23 @@ public class Entscheidung : MonoBehaviour
         vid.url = url;
         vid.Prepare();
     }
-
+    public void SetEntschUrl()
+    {
+        entsch1Vid.url = entsch1Url;
+        vid.Prepare();
+    }
     public void StartVideo(VideoPlayer vp)
     {
         Debug.Log("Video is played");
         vp.Play();
         startButton.SetActive(false);
+    }
+
+    public void StartEntschVideo(VideoPlayer vp)
+    {
+        Debug.Log("Entsch1 is played");
+        vp.Play();
+        videoAntworten.SetActive(false);
     }
 
     public void Update()
@@ -49,15 +64,16 @@ public class Entscheidung : MonoBehaviour
         {
             Entscheidung1.SetActive(true);
 
-            if (time > 0)
+            if (timeEntscheidung > 0)
             {
                 timeEntscheidung -= Time.deltaTime;
             }
-            else if (time <= 0)
+            else if (timeEntscheidung <= 0)
             {
-                //   chooseRandom.SetActive(false);
+                chooseRandom.SetActive(false);
 
             }
         }
+
     }
 }
