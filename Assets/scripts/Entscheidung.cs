@@ -13,7 +13,7 @@ public class Entscheidung : MonoBehaviour
 
     public GameObject startButton;
     public GameObject Entscheidung1;
-    public GameObject chooseRandom;
+    //public GameObject chooseRandom;
     public float timeWaited;
     public float time;
     public float maxTime = 5f;
@@ -22,6 +22,10 @@ public class Entscheidung : MonoBehaviour
 
     public GameObject videoAntworten;
     public GameObject videoNichtAntworten;
+    public string videoAntwortenURL;
+    public string videoNichtAntwortenURL;
+
+    //public float EndReached;
 
     public void Start()
     {
@@ -29,6 +33,7 @@ public class Entscheidung : MonoBehaviour
         vid.prepareCompleted += StartEntsch1Video;
         time = maxTime;
         timeEntscheidung = maxTimeEntscheidung;
+        vid.loopPointReached += EndReached;
     }
 
     public void SetUrl()
@@ -55,6 +60,18 @@ public class Entscheidung : MonoBehaviour
         //videoAntworten.SetActive(false);
     }
 
+    public void EndReached()
+    {
+        if (videoAntworten == true)
+        {
+            play.videoAntwortenURL;
+        }
+        else if (videoNichtAntworten == true)
+        {
+
+        }
+    }
+
     public void Update()
     {
         if (time > 0)
@@ -71,7 +88,7 @@ public class Entscheidung : MonoBehaviour
             }
             else if (timeEntscheidung <= 0)
             {
-                chooseRandom.SetActive(false);
+                //chooseRandom.SetActive(false);
 
             }
         }

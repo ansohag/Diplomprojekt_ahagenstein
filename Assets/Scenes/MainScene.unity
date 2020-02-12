@@ -325,9 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vid: {fileID: 512760233}
-  entschVid: {fileID: 512760233}
+  entsch1Vid: {fileID: 0}
   url: file:///Users/Anna/Documents/Diplomprojekt/programming/sampleVideos/video5.mp4
-  entschUrl: file:///Users/Anna/Documents/Diplomprojekt/programming/sampleVideos/video4.mp4
+  entsch1Url: 
   startButton: {fileID: 958258777}
   Entscheidung1: {fileID: 1366499301}
   chooseRandom: {fileID: 2034712176}
@@ -1026,9 +1026,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512760233}
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 1804321555}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1037,9 +1037,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1804321555}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 512760233}
+        m_MethodName: set_url
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: file:///Users/Anna/Documents/Diplomprojekt/programming/sampleVideos/video1.mp4
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 512760233}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
