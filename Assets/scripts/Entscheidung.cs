@@ -33,7 +33,7 @@ public class Entscheidung : MonoBehaviour
         vid.prepareCompleted += StartEntsch1Video;
         time = maxTime;
         timeEntscheidung = maxTimeEntscheidung;
-        vid.loopPointReached += EndReached;
+        //        vid.loopPointReached += EndReached;
     }
 
     public void SetUrl()
@@ -64,7 +64,7 @@ public class Entscheidung : MonoBehaviour
     {
         if (videoAntworten == true)
         {
-            play.videoAntwortenURL;
+            //play.videoAntwortenURL;
         }
         else if (videoNichtAntworten == true)
         {
