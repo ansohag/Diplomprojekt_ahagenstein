@@ -19,7 +19,6 @@ public class DecisionManager : MonoBehaviour
     {
         //wenn Ende des Videos erreicht ist wird Funktion PlayVideos aufgerufen
         videoPlayer.loopPointReached += NextVideo;
-
     }
 
     public void NextVideo(VideoPlayer vid)
@@ -29,7 +28,9 @@ public class DecisionManager : MonoBehaviour
         {
             videoPlayer.clip = videoclips[number];
             videoPlayer.Play();
+            EntscheidungsButtons[number].SetActive(false); // Buttons werden ausgeblendet
             number = number + 1;
+            timeRunning = true;
         }
         //Wenn es drüber ist dann wird nicht mehr dazugerechnet 
         else
@@ -44,6 +45,7 @@ public class DecisionManager : MonoBehaviour
         timeRunning = true;
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -51,17 +53,23 @@ public class DecisionManager : MonoBehaviour
         if (timeRunning)
         {
             //wenn die Zeit noch größer 0 ist wird Zeit abgezogen
-            if (time > 0)
+            if (maxTime[number] > 0)
             {
-                time -= Time.deltaTime;
+                maxTime[number] -= Time.deltaTime;
             }
             //zeit ist abgelaufen 
             else
             {
                 Debug.Log("Time is up");
                 EntscheidungsButtons[number].SetActive(true);
+                timeRunning = false;
             }
         }
 
+    }
+
+    public void NewVideo(VideoClip videoVariable)
+    {
+        videoclips[0] = videoVariable;
     }
 }
